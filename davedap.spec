@@ -28,10 +28,11 @@ between two LDAP servers and recursively delete or copy entire trees.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/etc/httpd,%{davedapdir}/{images,include}}
+install -d $RPM_BUILD_ROOT{/etc/httpd,%{davedapdir}/{images,templates/creation}}
 
 install *.php *.css *.txt $RPM_BUILD_ROOT%{davedapdir}/
 install images/* $RPM_BUILD_ROOT%{davedapdir}/images/
+install templates/creation/*.php $RPM_BUILD_ROOT%{davedapdir}/templates/creation/
 
 install %SOURCE1 $RPM_BUILD_ROOT/etc/httpd/
 install config.php.example $RPM_BUILD_ROOT/etc/davedap.conf
@@ -62,9 +63,10 @@ fi
 %files
 %defattr(644,root,root,755)
 # there's no README, INSTALL may contain usefull info
-%doc INSTALL TODO
+%doc FEATURES INSTALL TODO
 %dir %{davedapdir}
 %{davedapdir}/images
+%{davedapdir}/templates
 %{davedapdir}/*.php
 %{davedapdir}/*.css
 %{davedapdir}/*.txt

@@ -43,7 +43,7 @@ install *.php *.css *.txt *.js $RPM_BUILD_ROOT%{davedapdir}/
 install images/*.png $RPM_BUILD_ROOT%{davedapdir}/images/
 install templates/creation/*.php $RPM_BUILD_ROOT%{davedapdir}/templates/creation/
 
-install %SOURCE1 $RPM_BUILD_ROOT/etc/httpd/
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/httpd/
 install config.php.example $RPM_BUILD_ROOT/etc/davedap.conf
 ln -s /etc/davedap.conf $RPM_BUILD_ROOT%{davedapdir}/config.php
 

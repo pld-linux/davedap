@@ -1,11 +1,11 @@
 Summary:	DaveDAP's A Very Easy Directory Administration Program
 Name:		davedap
-Version:	0.8.1
+Version:	0.8.2
 Release:	1
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	f7756e7a8201725ed7dff72968078a8e
+# Source0-md5:	55c6e4b2954f2319f2bebf1cb7700e64
 Source1:	%{name}.conf
 URL:		http://davedap.sourceforge.net/
 Requires:	apache

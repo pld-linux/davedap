@@ -1,12 +1,12 @@
 Summary:	DaveDAP's A Very Easy Directory Administration Program
 Summary(pl):	DaveDAP - bardzo prosty program do administrowania katalogami
 Name:		davedap
-Version:	0.8.3
+Version:	0.8.4
 Release:	1
 License:	GPL v2
 Group:		Applications/Databases
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	559109c9ac62da488cbadb8c0a642052
+# Source0-md5:	99abc5001ffe43dd8e9a26e19ac5c5f2
 Source1:	%{name}.conf
 URL:		http://davedap.sourceforge.net/
 Requires:	apache
@@ -39,7 +39,7 @@ lub kopiowaæ ca³e drzewa.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{/etc/httpd,%{davedapdir}/{images,templates/creation}}
 
-install *.php *.css *.txt $RPM_BUILD_ROOT%{davedapdir}/
+install *.php *.css *.txt *.js $RPM_BUILD_ROOT%{davedapdir}/
 install images/*.png $RPM_BUILD_ROOT%{davedapdir}/images/
 install templates/creation/*.php $RPM_BUILD_ROOT%{davedapdir}/templates/creation/
 
@@ -72,11 +72,12 @@ fi
 %files
 %defattr(644,root,root,755)
 # there's no README, INSTALL may contain usefull info
-%doc FEATURES INSTALL TODO
+%doc INSTALL
 %dir %{davedapdir}
 %{davedapdir}/images
 %{davedapdir}/templates
 %{davedapdir}/*.php
+%{davedapdir}/*.js
 %{davedapdir}/*.css
 %{davedapdir}/*.txt
 %config(noreplace) %verify(not mtime size md5) /etc/httpd/%{name}.conf

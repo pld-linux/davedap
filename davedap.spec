@@ -52,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 if [ -f /etc/httpd/httpd.conf ] && ! grep -q "^Include.*davedap.conf" /etc/httpd/httpd.conf; then
-        echo "Include /etc/httpd/davedap.conf" >> /etc/httpd/httpd.conf
+	echo "Include /etc/httpd/davedap.conf" >> /etc/httpd/httpd.conf
 fi
 if [ -f /var/lock/subsys/httpd ]; then
 	/usr/sbin/apachectl restart 1>&2
@@ -62,8 +62,8 @@ fi
 if [ "$1" = "0" ]; then
 	umask 027
 	grep -v "^Include.*davedap.conf" /etc/httpd/httpd.conf > \
-                /etc/httpd/httpd.conf.tmp
-        mv -f /etc/httpd/httpd.conf.tmp /etc/httpd/httpd.conf
+		/etc/httpd/httpd.conf.tmp
+	mv -f /etc/httpd/httpd.conf.tmp /etc/httpd/httpd.conf
 	if [ -f /var/lock/subsys/httpd ]; then
 		/usr/sbin/apachectl restart 1>&2
 	fi

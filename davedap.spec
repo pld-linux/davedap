@@ -1,4 +1,5 @@
 Summary:	DaveDAP's A Very Easy Directory Administration Program
+Summary(pl):	DaveDAP - bardzo prosty program do administrowania katalogami
 Name:		davedap
 Version:	0.8.2
 Release:	1
@@ -9,19 +10,27 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1:	%{name}.conf
 URL:		http://davedap.sourceforge.net/
 Requires:	apache
+Requires:	php
 Requires:	php-ldap
 Requires:	php-xml
 Requires(post,preun):	grep
 Requires(preun):	fileutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	davedapdir	%{_datadir}/%{name}
+%define		davedapdir	%{_datadir}/%{name}
 
 %description
 DaveDAP is a web-based LDAP admin tool written in PHP. You can browse
 your LDAP tree, create, delete, edit, and copy objects, perform
 searches, and view your server's schema. You can even copy objects
 between two LDAP servers and recursively delete or copy entire trees.
+
+%description -l pl
+DaveDAP to oparte na WWW narzêdzie administracyjne do LDAP napisane w
+PHP. Pozwala przegl±daæ drzewo LDAP, tworzyæ, usuwaæ, modyfikowaæ i
+kopiowaæ obiekty, wyszukiwaæ i ogl±daæ schematy serwera. Mo¿na te¿
+kopiowaæ obiekty miêdzy dwoma serwerami LDAP i rekurencyjnie usuwaæ
+lub kopiowaæ ca³e drzewa.
 
 %prep
 %setup -q

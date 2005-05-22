@@ -43,8 +43,8 @@ install *.php *.css *.txt *.js $RPM_BUILD_ROOT%{davedapdir}/
 install images/*.png $RPM_BUILD_ROOT%{davedapdir}/images/
 install templates/creation/*.php $RPM_BUILD_ROOT%{davedapdir}/templates/creation/
 
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/httpd/
-install config.php.example $RPM_BUILD_ROOT/etc/davedap.conf
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/httpd
+install config.php.example $RPM_BUILD_ROOT%{_sysconfdir}/davedap.conf
 ln -s /etc/davedap.conf $RPM_BUILD_ROOT%{davedapdir}/config.php
 
 %clean
@@ -80,5 +80,5 @@ fi
 %{davedapdir}/*.js
 %{davedapdir}/*.css
 %{davedapdir}/*.txt
-%config(noreplace) %verify(not mtime size md5) /etc/httpd/%{name}.conf
-%config(noreplace) %verify(not mtime size md5) /etc/%{name}.conf
+%config(noreplace) %verify(not md5 mtime size) /etc/httpd/%{name}.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}.conf

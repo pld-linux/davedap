@@ -9,7 +9,7 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	99abc5001ffe43dd8e9a26e19ac5c5f2
 Source1:	%{name}.conf
 URL:		http://davedap.sourceforge.net/
-Requires:	apache
+Requires:	webserver = apache
 Requires:	php
 Requires:	php-ldap
 Requires:	php-xml

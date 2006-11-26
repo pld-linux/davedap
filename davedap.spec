@@ -1,20 +1,22 @@
+# TODO
+# - webapps
 Summary:	DaveDAP's A Very Easy Directory Administration Program
 Summary(pl):	DaveDAP - bardzo prosty program do administrowania katalogami
 Name:		davedap
 Version:	0.8.4
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/Databases
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/davedap/%{name}-%{version}.tar.gz
 # Source0-md5:	99abc5001ffe43dd8e9a26e19ac5c5f2
 Source1:	%{name}.conf
 URL:		http://davedap.sourceforge.net/
-Requires:	webserver = apache
-Requires:	php
-Requires:	php-ldap
-Requires:	php-xml
 Requires(post,preun):	grep
 Requires(preun):	fileutils
+Requires:	php(ldap)
+Requires:	php(xml)
+Requires:	webserver = apache
+Requires:	webserver(php)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		davedapdir	%{_datadir}/%{name}

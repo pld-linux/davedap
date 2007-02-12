@@ -1,7 +1,7 @@
 # TODO
 # - webapps
 Summary:	DaveDAP's A Very Easy Directory Administration Program
-Summary(pl.UTF-8):   DaveDAP - bardzo prosty program do administrowania katalogami
+Summary(pl.UTF-8):	DaveDAP - bardzo prosty program do administrowania katalogami
 Name:		davedap
 Version:	0.8.4
 Release:	2
